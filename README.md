@@ -16,8 +16,8 @@ After the chat, an AI model provides feedback on the interaction. Conversations 
 
 The models that were selected from Generative AI Studio in Vertex AI were:
 
-* chatbison for powering conversations with the simulated customer
-* textbison for generating feedback on the engineer's performance
+* `chat-bison` for powering conversations with the simulated customer
+* `text-bison` for generating feedback on the engineer's performance
 
 ## Features
 * Generate random customer personas and cloud tech issues
