@@ -36,7 +36,7 @@ The notebook requires a Google Cloud Project with the following APIs enabled:
 Install the required libraries:
 
 ```
-pip install --upgrade shapely
+pip install shapely
 pip install google-cloud-aiplatform
 pip install google-cloud-storage
 pip install fpdf
