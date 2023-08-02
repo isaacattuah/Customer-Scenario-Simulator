@@ -50,3 +50,7 @@ Update the notebook with your Cloud Project ID, Region, and Bucket name.
 * The next cell will generate feedback
 * Further cells handle saving as text/PDF and uploading to cloud storage
 
+## References
+* [Vertex AI Documentation](https://cloud.google.com/vertex-ai/docs)
+* [Test chat prompts](https://cloud.google.com/vertex-ai/docs/generative-ai/chat/test-chat-prompts)
+
