@@ -73,6 +73,9 @@ Here are the few-shot prompts that were used for each model:
 
 # Sample Runs
 
+![Run #1](run_one.png)
+![Run #2](run_two.png)
+
 # Evaluation (Metrics & Approach)
 
 ## Chatbot Quality & Engagement
