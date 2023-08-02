@@ -125,10 +125,10 @@ Here are the few-shot prompts that were used for each model:
 * The application runs fully locally and is not connected to any production systems. This isolates it from real customer data.
 * No actual customer PII is included in scenarios. Conversations discuss fictional identities/accounts.
 
-## Limitations & Improvement Ideas
+# Limitations & Improvement Ideas
 * The models would sometimes assume I am asking for sensitive data and not engage in conversations.
 * Using Jupyter notebook for interactions isn’t the best user experience
 
-## Solution
+# Solution
 
 
