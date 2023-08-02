@@ -67,3 +67,68 @@ The Customer Scenario Simulator is designed to automatically generate customer s
 ## Prompt Design Workflow
 
 Here are the few-shot prompts that were used for each model:
+
+| Model      | Prompt                                                                                                                                                                                                                                                                                                                                                                                               | Explanations                                                                                                                                                                                                                                                                                                                                                                                                                                       | Prompt Type      |
+|------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------|
+| Chat Bison | You are a  `{selected_persona}`  customer and you are experiencing a problem related to  `{selected_area}`  on Google Cloud. \nWhen prompted, you will provide a detailed description of the problem you are facing, including any relevant context or issues you have encountered. \nPlease note that you should keep the dialogue brief but conversational and ask questions to solve your issue." | `{selected_persona}` is assigned from variable persona consisting of different personas:  `['impatient','dissatisfied','angry','frugal','clueless','defective object', 'feature request']`  `{selected_area}`is assigned from variable areas from variable areas  consisting of GCP topic areas:  `["Compute", "Storage", "Database", "Networking", "Big Data", "Machine Learning", "Internet of Things", "Serverless", "Security", "Management"]` | Zero-shot prompt |
+| Text Bison | Provide constructive feedback to the Customer Engineer based on :  `{conversation}`   Make a bulleted list of items for  a. What went well ? b. What could have been improved in this interaction? and  c. Any additional tips                                                                                                                                                                       | `{conversation}` consists of user input and model output from a given conversation                                                                                                                                                                                                                                                                                                                                                                 | Few-shot prompt  |
+
+
+# Sample Runs
+
+# Evaluation (Metrics & Approach)
+
+## Chatbot Quality & Engagement
+
+* Metric: Sentence relevance, coherence, fluency
+ *  Evaluation: How similar to an actual conversation is this simulation ?
+  * Measure via human ratings on sample conversations
+  * Evaluate weekly with new test scenarios
+
+
+
+* Metric: Conversation length, customer questions answered
+ * Evaluation: Conversation length
+  * Measure by analyzing chat logs
+  * Track weekly averages and compare to baseline
+
+## Feedback Quality
+
+* Metric: Actionability, constructiveness, insightfulness
+ * Evaluation: Human ratings on sample feedback items
+  * Evaluate weekly with new conversations
+  * Conversation Resolution
+
+* Metric: Issues resolved, customer satisfaction
+ * Surveys after each application use
+ * Tracking daily/weekly average uses
+
+# Advanced Workflow Considerations
+
+* Expand the persona and issue database to have more variety in generated scenarios. Can pull from customer support forums/subreddits to find common examples.
+* Fine-tune the chatbot model by providing more conversational training data. This can make the dialogues more natural.
+* Experiment with the text generation parameters (temperature, top-k, etc) to improve quality.
+* Add more specificity and customization to the feedback from the evaluator model.
+* Incorporate some basic NLP to track sentiment, escalation cues, resolution etc. This can quantify conversation metrics.
+* Build a simple frontend UI to make it easier to interact with the simulator.
+* Enable conversations to branch based on customer responses. This makes dialogues more dynamic.
+* Store generated scenarios, conversations, and feedback in a database to continue expanding the training data.
+* Implement user authentication to track individual progress and customize experience.
+* Expand to other customer service domains beyond cloud tech support.
+
+# Responsible AI
+
+## Safety Filters
+* The chatbot is constrained to respond only to the generated customer scenario context. This prevents it from engaging in unsafe/unethical dialog.
+* The feedback generator is focused on constructive, actionable feedback. Prompts guide it away from toxic or unhelpful language.
+* Cloud storage access is limited to uploading generated files. No mechanisms exist to delete/modify other data.
+* The application runs fully locally and is not connected to any production systems. This isolates it from real customer data.
+* No actual customer PII is included in scenarios. Conversations discuss fictional identities/accounts.
+
+## Limitations & Improvement Ideas
+* The models would sometimes assume I am asking for sensitive data and not engage in conversations.
+* Using Jupyter notebook for interactions isn’t the best user experience
+
+## Solution
+
+
