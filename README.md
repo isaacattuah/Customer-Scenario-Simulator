@@ -10,6 +10,8 @@ It generates a random customer persona (angry, impatient etc) and technical issu
 
 After the chat, an AI model provides feedback on the interaction. Conversations are saved as text or PDF files, and uploaded to cloud storage.
 
+![Architecture](Architecture.png)
+
 ## Models Used
 
 The models that were selected from Generative AI Studio in Vertex AI were:
